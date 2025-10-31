@@ -56,6 +56,25 @@ export const MembershipApplicationsPage = () => {
         .update({ status })
         .eq('id', id);
 
+      if (status === 'approved' && selectedApp) {
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+
+          await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-approval-webhook`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${session?.access_token || import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              applicationData: selectedApp
+            })
+          });
+        } catch (webhookError) {
+          console.error('Erro ao enviar webhook:', webhookError);
+        }
+      }
+
       await fetchApplications();
       setSelectedApp(null);
     } catch (error) {
