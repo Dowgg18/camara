@@ -30,7 +30,7 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const webhookUrl = "https://webhook.domingoscreative.tech/webhook/associacao";
+    const webhookUrl = "https://webhook.domingos.tech/webhook/pedidos";
 
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
