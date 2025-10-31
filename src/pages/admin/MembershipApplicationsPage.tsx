@@ -81,24 +81,28 @@ export const MembershipApplicationsPage = () => {
 
       if (status === 'approved') {
         try {
-          // Buscar os dados atualizados antes de enviar o webhook
-          const { data: updatedApp, error: fetchError } = await supabase
+          // Buscar os dados da aplicação
+          const { data: appData, error: fetchError } = await supabase
             .from('membership_applications')
             .select('*')
             .eq('id', id)
             .single();
-
-          console.log('Dados atualizados do banco:', updatedApp);
 
           if (fetchError) {
             console.error('Erro ao buscar dados:', fetchError);
             throw fetchError;
           }
 
-          if (updatedApp) {
+          if (appData) {
             const { data: { session } } = await supabase.auth.getSession();
 
-            console.log('Enviando para webhook:', updatedApp);
+            // Usar o valor digitado, não o do banco
+            const dataToSend = {
+              ...appData,
+              valor: parseFloat(valor)
+            };
+
+            console.log('Enviando para webhook com valor digitado:', dataToSend);
 
             const webhookResponse = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-approval-webhook`, {
               method: 'POST',
@@ -107,7 +111,7 @@ export const MembershipApplicationsPage = () => {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                applicationData: updatedApp
+                applicationData: dataToSend
               })
             });
 
