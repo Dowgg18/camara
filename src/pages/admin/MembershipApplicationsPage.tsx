@@ -261,8 +261,8 @@ export const MembershipApplicationsPage = () => {
 
                 {selectedApp.valor && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Valor da Anuidade</label>
-                    <p className="text-gray-900">R$ {selectedApp.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Valor Mensal</label>
+                    <p className="text-gray-900">R$ {selectedApp.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}/mês</p>
                   </div>
                 )}
               </div>
@@ -329,7 +329,7 @@ export const MembershipApplicationsPage = () => {
               <div className="p-6 border-t space-y-4">
                 <div>
                   <label htmlFor="valor" className="block text-sm font-medium text-gray-700 mb-2">
-                    Valor da Anuidade (R$) *
+                    Valor Mensal (R$) *
                   </label>
                   <input
                     type="number"
@@ -338,9 +338,10 @@ export const MembershipApplicationsPage = () => {
                     min="0"
                     value={valor}
                     onChange={(e) => setValor(e.target.value)}
-                    placeholder="Ex: 1500.00"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
+                    placeholder="Ex: 150.00"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                   />
+                  <p className="text-xs text-gray-500 mt-1">Este é o valor da mensalidade</p>
                 </div>
                 <div className="flex gap-3">
                   <button
