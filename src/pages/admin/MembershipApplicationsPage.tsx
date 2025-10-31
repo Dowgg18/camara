@@ -65,6 +65,8 @@ export const MembershipApplicationsPage = () => {
         updateData.valor = parseFloat(valor);
       }
 
+      console.log('VALOR DO INPUT:', valor);
+      console.log('VALOR PARSEADO:', parseFloat(valor));
       console.log('Atualizando com dados:', updateData);
 
       const { error: updateError } = await supabase
@@ -370,7 +372,10 @@ export const MembershipApplicationsPage = () => {
                     step="0.01"
                     min="0"
                     value={valor}
-                    onChange={(e) => setValor(e.target.value)}
+                    onChange={(e) => {
+                      console.log('Valor digitado:', e.target.value);
+                      setValor(e.target.value);
+                    }}
                     placeholder="Ex: 150.00"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                   />
@@ -378,7 +383,10 @@ export const MembershipApplicationsPage = () => {
                 </div>
                 <div className="flex gap-3">
                   <button
-                    onClick={() => updateStatus(selectedApp.id, 'approved')}
+                    onClick={() => {
+                      console.log('Clicando em aprovar com valor:', valor);
+                      updateStatus(selectedApp.id, 'approved');
+                    }}
                     disabled={loading || !valor}
                     className="flex-1 flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                   >
