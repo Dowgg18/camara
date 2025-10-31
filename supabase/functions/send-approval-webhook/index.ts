@@ -32,16 +32,24 @@ Deno.serve(async (req: Request) => {
 
     const webhookUrl = "https://webhook.domingos.tech/webhook/pedidos";
 
+    // Transformar o campo 'valor' para 'monthly_value'
+    const webhookPayload = {
+      event: "membership_approved",
+      timestamp: new Date().toISOString(),
+      data: {
+        ...applicationData,
+        monthly_value: applicationData.valor,
+      },
+    };
+
+    console.log('Enviando payload para webhook:', webhookPayload);
+
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        event: "membership_approved",
-        timestamp: new Date().toISOString(),
-        data: applicationData,
-      }),
+      body: JSON.stringify(webhookPayload),
     });
 
     if (!webhookResponse.ok) {
