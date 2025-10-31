@@ -9,6 +9,7 @@ interface Application {
   documento: string;
   tipo_documento: string;
   email: string;
+  telefone: string | null;
   endereco: string;
   complemento: string | null;
   cidade: string;
@@ -20,6 +21,7 @@ interface Application {
   representante: string | null;
   cargo: string | null;
   observacoes: string | null;
+  valor: number | null;
   status: 'pending' | 'approved' | 'rejected';
   created_at: string;
 }
@@ -29,6 +31,7 @@ export const MembershipApplicationsPage = () => {
   const [filter, setFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('pending');
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
   const [loading, setLoading] = useState(false);
+  const [valor, setValor] = useState<string>('');
 
   useEffect(() => {
     fetchApplications();
@@ -51,9 +54,15 @@ export const MembershipApplicationsPage = () => {
   const updateStatus = async (id: string, status: 'approved' | 'rejected') => {
     setLoading(true);
     try {
+      const updateData: any = { status };
+
+      if (status === 'approved' && valor) {
+        updateData.valor = parseFloat(valor);
+      }
+
       await supabase
         .from('membership_applications')
-        .update({ status })
+        .update(updateData)
         .eq('id', id);
 
       if (status === 'approved' && selectedApp) {
@@ -77,6 +86,7 @@ export const MembershipApplicationsPage = () => {
 
       await fetchApplications();
       setSelectedApp(null);
+      setValor('');
     } catch (error) {
       console.error('Erro ao atualizar status:', error);
       alert('Erro ao atualizar status. Tente novamente.');
@@ -235,10 +245,26 @@ export const MembershipApplicationsPage = () => {
                   <p className="text-gray-900">{selectedApp.email}</p>
                 </div>
 
+                {selectedApp.telefone && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                      <Phone className="w-4 h-4 mr-1" /> Telefone
+                    </label>
+                    <p className="text-gray-900">{selectedApp.telefone}</p>
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
                   {getStatusBadge(selectedApp.status)}
                 </div>
+
+                {selectedApp.valor && (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Valor da Anuidade</label>
+                    <p className="text-gray-900">R$ {selectedApp.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+                  </div>
+                )}
               </div>
 
               <div>
@@ -300,23 +326,40 @@ export const MembershipApplicationsPage = () => {
             </div>
 
             {selectedApp.status === 'pending' && (
-              <div className="p-6 border-t flex gap-3">
-                <button
-                  onClick={() => updateStatus(selectedApp.id, 'approved')}
-                  disabled={loading}
-                  className="flex-1 flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold disabled:opacity-50"
-                >
-                  <Check className="w-5 h-5 mr-2" />
-                  {loading ? 'Processando...' : 'Aprovar'}
-                </button>
-                <button
-                  onClick={() => updateStatus(selectedApp.id, 'rejected')}
-                  disabled={loading}
-                  className="flex-1 flex items-center justify-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold disabled:opacity-50"
-                >
-                  <X className="w-5 h-5 mr-2" />
-                  {loading ? 'Processando...' : 'Rejeitar'}
-                </button>
+              <div className="p-6 border-t space-y-4">
+                <div>
+                  <label htmlFor="valor" className="block text-sm font-medium text-gray-700 mb-2">
+                    Valor da Anuidade (R$) *
+                  </label>
+                  <input
+                    type="number"
+                    id="valor"
+                    step="0.01"
+                    min="0"
+                    value={valor}
+                    onChange={(e) => setValor(e.target.value)}
+                    placeholder="Ex: 1500.00"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
+                  />
+                </div>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => updateStatus(selectedApp.id, 'approved')}
+                    disabled={loading || !valor}
+                    className="flex-1 flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <Check className="w-5 h-5 mr-2" />
+                    {loading ? 'Processando...' : 'Aprovar'}
+                  </button>
+                  <button
+                    onClick={() => updateStatus(selectedApp.id, 'rejected')}
+                    disabled={loading}
+                    className="flex-1 flex items-center justify-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold disabled:opacity-50"
+                  >
+                    <X className="w-5 h-5 mr-2" />
+                    {loading ? 'Processando...' : 'Rejeitar'}
+                  </button>
+                </div>
               </div>
             )}
           </div>
