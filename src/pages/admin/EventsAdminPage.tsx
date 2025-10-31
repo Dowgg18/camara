@@ -182,7 +182,7 @@ export const EventsAdminPage = () => {
               setSelectedImage(null);
               setShowForm(true);
             }}
-            className="flex items-center px-6 py-3 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors font-semibold"
+            className="flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold"
           >
             <Plus className="w-5 h-5 mr-2" />
             Novo Evento
@@ -201,7 +201,7 @@ export const EventsAdminPage = () => {
                     <span>📅 {new Date(event.event_date).toLocaleDateString('pt-BR')}</span>
                     {event.is_paid && <span>💰 R$ {event.price}</span>}
                     {event.max_attendees && <span>👥 Máx: {event.max_attendees}</span>}
-                    {event.is_members_only && <span className="text-emerald-600 font-medium">Apenas Membros</span>}
+                    {event.is_members_only && <span className="text-gray-700 font-medium">Apenas Membros</span>}
                   </div>
                 </div>
                 <div className="flex gap-2 ml-4">
@@ -252,7 +252,7 @@ export const EventsAdminPage = () => {
                   type="text"
                   value={form.title_pt}
                   onChange={(e) => setForm({ ...form, title_pt: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                   required
                 />
               </div>
@@ -263,7 +263,7 @@ export const EventsAdminPage = () => {
                   value={form.description_pt}
                   onChange={(e) => setForm({ ...form, description_pt: e.target.value })}
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                   required
                 />
               </div>
@@ -274,7 +274,7 @@ export const EventsAdminPage = () => {
                   type="text"
                   value={form.location}
                   onChange={(e) => setForm({ ...form, location: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                   required
                 />
               </div>
@@ -286,7 +286,7 @@ export const EventsAdminPage = () => {
                     type="date"
                     value={form.event_date}
                     onChange={(e) => setForm({ ...form, event_date: e.target.value })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                     required
                   />
                 </div>
@@ -296,7 +296,7 @@ export const EventsAdminPage = () => {
                     type="date"
                     value={form.end_date}
                     onChange={(e) => setForm({ ...form, end_date: e.target.value })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -316,7 +316,7 @@ export const EventsAdminPage = () => {
                     type="checkbox"
                     checked={form.is_paid}
                     onChange={(e) => setForm({ ...form, is_paid: e.target.checked })}
-                    className="w-4 h-4 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500"
+                    className="w-4 h-4 text-gray-700 border-gray-300 rounded focus:ring-gray-600"
                   />
                   <span className="ml-2 text-sm text-gray-700">Evento Pago</span>
                 </label>
@@ -326,7 +326,7 @@ export const EventsAdminPage = () => {
                     type="checkbox"
                     checked={form.is_members_only}
                     onChange={(e) => setForm({ ...form, is_members_only: e.target.checked })}
-                    className="w-4 h-4 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500"
+                    className="w-4 h-4 text-gray-700 border-gray-300 rounded focus:ring-gray-600"
                   />
                   <span className="ml-2 text-sm text-gray-700">Apenas para Membros</span>
                 </label>
@@ -341,7 +341,7 @@ export const EventsAdminPage = () => {
                       step="0.01"
                       value={form.price}
                       onChange={(e) => setForm({ ...form, price: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                     />
                   </div>
                   <div>
@@ -350,7 +350,7 @@ export const EventsAdminPage = () => {
                       type="number"
                       value={form.max_attendees}
                       onChange={(e) => setForm({ ...form, max_attendees: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -360,7 +360,7 @@ export const EventsAdminPage = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 flex items-center justify-center px-6 py-3 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors font-semibold disabled:opacity-50"
+                  className="flex-1 flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold disabled:opacity-50"
                 >
                   <Save className="w-5 h-5 mr-2" />
                   {loading ? 'Salvando...' : 'Salvar Evento'}

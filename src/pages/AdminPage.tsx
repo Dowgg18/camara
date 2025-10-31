@@ -451,7 +451,7 @@ export const AdminPage = () => {
         {form.image_url && <img src={form.image_url} alt={form.title_pt} className="w-full h-96 object-cover" />}
         <div className="p-8">
           <div className="flex items-center space-x-3 text-sm text-gray-600 mb-4">
-            <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">{form.category}</span>
+            <span className="px-3 py-1 bg-gray-200 text-gray-800 rounded-full">{form.category}</span>
             <span>{form.author}</span>
             <span>•</span>
             <span>{form.read_time} de leitura</span>
@@ -491,7 +491,7 @@ export const AdminPage = () => {
 
                 case 'quote':
                   return (
-                    <blockquote key={block.id} className="border-l-4 border-emerald-600 pl-6 py-4 my-6 italic text-gray-700 bg-gray-50">
+                    <blockquote key={block.id} className="border-l-4 border-gray-600 pl-6 py-4 my-6 italic text-gray-700 bg-gray-50">
                       {block.content}
                     </blockquote>
                   );
@@ -547,25 +547,25 @@ export const AdminPage = () => {
 
         {showForm ? (
           <div className="bg-white rounded-xl shadow-xl border border-gray-200">
-            <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-emerald-50 to-white">
+            <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-gray-900">
                   {editingId ? 'Editar Artigo' : 'Novo Artigo'}
                 </h2>
                 <div className="flex items-center space-x-3">
-                  <label className="flex items-center space-x-2 px-4 py-2 bg-white border-2 border-emerald-200 text-emerald-700 rounded-lg cursor-pointer hover:bg-emerald-50 transition-all shadow-sm">
+                  <label className="flex items-center space-x-2 px-4 py-2 bg-white border-2 border-gray-300 text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 transition-all shadow-sm">
                     <input
                       type="checkbox"
                       checked={autoTranslateEnabled}
                       onChange={(e) => setAutoTranslateEnabled(e.target.checked)}
-                      className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500"
+                      className="w-4 h-4 text-gray-700 rounded focus:ring-gray-600"
                     />
                     <Sparkles className="w-4 h-4" />
                     <span className="text-sm font-semibold">Tradução IA</span>
                   </label>
                   <button
                     onClick={() => setPreviewMode(!previewMode)}
-                    className="flex items-center space-x-2 px-4 py-2 text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors border-2 border-emerald-200"
+                    className="flex items-center space-x-2 px-4 py-2 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors border-2 border-gray-300"
                   >
                     <Eye className="w-4 h-4" />
                     <span className="text-sm font-semibold">{previewMode ? 'Editar' : 'Visualizar'}</span>
@@ -584,11 +584,11 @@ export const AdminPage = () => {
               )}
 
               {autoTranslateEnabled && !editingId && (
-                <div className="mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-start space-x-3">
-                  <Sparkles className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <div className="mt-4 p-4 bg-gray-100 border border-gray-300 rounded-lg flex items-start space-x-3">
+                  <Sparkles className="w-5 h-5 text-gray-700 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-semibold text-emerald-900">Tradução Automática Ativada</p>
-                    <p className="text-sm text-emerald-700">Digite em português e o conteúdo será traduzido automaticamente para russo e inglês.</p>
+                    <p className="text-sm font-semibold text-gray-900">Tradução Automática Ativada</p>
+                    <p className="text-sm text-gray-900">Digite em português e o conteúdo será traduzido automaticamente para russo e inglês.</p>
                   </div>
                 </div>
               )}
@@ -615,7 +615,7 @@ export const AdminPage = () => {
                       onClick={() => setActiveTab('info')}
                       className={`px-4 py-3 font-semibold whitespace-nowrap transition-colors ${
                         activeTab === 'info'
-                          ? 'border-b-3 border-emerald-600 text-emerald-700'
+                          ? 'border-b-3 border-gray-700 text-gray-900'
                           : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
@@ -626,7 +626,7 @@ export const AdminPage = () => {
                       onClick={() => setActiveTab('content-pt')}
                       className={`px-4 py-3 font-semibold whitespace-nowrap transition-colors flex items-center space-x-2 ${
                         activeTab === 'content-pt'
-                          ? 'border-b-3 border-emerald-600 text-emerald-700'
+                          ? 'border-b-3 border-gray-700 text-gray-900'
                           : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
@@ -638,7 +638,7 @@ export const AdminPage = () => {
                       onClick={() => setActiveTab('content-ru')}
                       className={`px-4 py-3 font-semibold whitespace-nowrap transition-colors ${
                         activeTab === 'content-ru'
-                          ? 'border-b-3 border-emerald-600 text-emerald-700'
+                          ? 'border-b-3 border-gray-700 text-gray-900'
                           : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
@@ -649,7 +649,7 @@ export const AdminPage = () => {
                       onClick={() => setActiveTab('content-en')}
                       className={`px-4 py-3 font-semibold whitespace-nowrap transition-colors ${
                         activeTab === 'content-en'
-                          ? 'border-b-3 border-emerald-600 text-emerald-700'
+                          ? 'border-b-3 border-gray-700 text-gray-900'
                           : 'text-gray-600 hover:text-gray-900'
                       }`}
                     >
@@ -671,20 +671,20 @@ export const AdminPage = () => {
                             value={form.title_pt}
                             onChange={(e) => handleTitleChange(e.target.value)}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all"
                             placeholder="Digite o título em português..."
                           />
                         </div>
                         <div>
                           <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-2">
                             <span>Título (Russo)</span>
-                            {translating.title && <Loader className="w-4 h-4 animate-spin text-emerald-600" />}
+                            {translating.title && <Loader className="w-4 h-4 animate-spin text-gray-700" />}
                           </label>
                           <input
                             type="text"
                             value={form.title_ru}
                             onChange={(e) => setForm({ ...form, title_ru: e.target.value })}
-                            className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-gradient-to-r from-emerald-50 to-white"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 bg-gradient-to-r from-gray-50 to-white"
                             placeholder={autoTranslateEnabled ? "Traduzindo..." : "Título em russo"}
                             readOnly={autoTranslateEnabled}
                           />
@@ -692,13 +692,13 @@ export const AdminPage = () => {
                         <div>
                           <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-2">
                             <span>Título (Inglês)</span>
-                            {translating.title && <Loader className="w-4 h-4 animate-spin text-emerald-600" />}
+                            {translating.title && <Loader className="w-4 h-4 animate-spin text-gray-700" />}
                           </label>
                           <input
                             type="text"
                             value={form.title_en}
                             onChange={(e) => setForm({ ...form, title_en: e.target.value })}
-                            className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-gradient-to-r from-emerald-50 to-white"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 bg-gradient-to-r from-gray-50 to-white"
                             placeholder={autoTranslateEnabled ? "Traduzindo..." : "Título em inglês"}
                             readOnly={autoTranslateEnabled}
                           />
@@ -711,7 +711,7 @@ export const AdminPage = () => {
                             value={form.category}
                             onChange={(e) => setForm({ ...form, category: e.target.value })}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-gray-600"
                           >
                             {categories.map(cat => (
                               <option key={cat} value={cat}>{cat}</option>
@@ -727,7 +727,7 @@ export const AdminPage = () => {
                             value={form.author}
                             onChange={(e) => setForm({ ...form, author: e.target.value })}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-gray-600"
                             placeholder="Nome do autor"
                           />
                         </div>
@@ -741,7 +741,7 @@ export const AdminPage = () => {
                             onChange={(e) => setForm({ ...form, read_time: e.target.value })}
                             required
                             placeholder="5 min"
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-gray-600"
                           />
                         </div>
                       </div>
@@ -755,7 +755,7 @@ export const AdminPage = () => {
                           onChange={(e) => handleExcerptChange(e.target.value)}
                           required
                           rows={3}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none"
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-gray-600 resize-none"
                           placeholder="Breve resumo do artigo..."
                         />
                       </div>
@@ -764,13 +764,13 @@ export const AdminPage = () => {
                         <div>
                           <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-2">
                             <span>Resumo (Russo)</span>
-                            {translating.excerpt && <Loader className="w-4 h-4 animate-spin text-emerald-600" />}
+                            {translating.excerpt && <Loader className="w-4 h-4 animate-spin text-gray-700" />}
                           </label>
                           <textarea
                             value={form.excerpt_ru}
                             onChange={(e) => setForm({ ...form, excerpt_ru: e.target.value })}
                             rows={3}
-                            className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 resize-none bg-gradient-to-r from-emerald-50 to-white"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 resize-none bg-gradient-to-r from-gray-50 to-white"
                             placeholder={autoTranslateEnabled ? "Traduzindo..." : "Resumo em russo"}
                             readOnly={autoTranslateEnabled}
                           />
@@ -778,13 +778,13 @@ export const AdminPage = () => {
                         <div>
                           <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-2">
                             <span>Resumo (Inglês)</span>
-                            {translating.excerpt && <Loader className="w-4 h-4 animate-spin text-emerald-600" />}
+                            {translating.excerpt && <Loader className="w-4 h-4 animate-spin text-gray-700" />}
                           </label>
                           <textarea
                             value={form.excerpt_en}
                             onChange={(e) => setForm({ ...form, excerpt_en: e.target.value })}
                             rows={3}
-                            className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 resize-none bg-gradient-to-r from-emerald-50 to-white"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 resize-none bg-gradient-to-r from-gray-50 to-white"
                             placeholder={autoTranslateEnabled ? "Traduzindo..." : "Resumo em inglês"}
                             readOnly={autoTranslateEnabled}
                           />
@@ -809,7 +809,7 @@ export const AdminPage = () => {
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg font-bold text-gray-900">Conteúdo em Português</h3>
                         {translating.blocks && (
-                          <div className="flex items-center space-x-2 px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full">
+                          <div className="flex items-center space-x-2 px-3 py-1.5 bg-gray-200 text-gray-900 rounded-full">
                             <Loader className="w-4 h-4 animate-spin" />
                             <span className="text-sm font-semibold">Traduzindo...</span>
                           </div>
@@ -826,8 +826,8 @@ export const AdminPage = () => {
                   {activeTab === 'content-ru' && (
                     <div>
                       {autoTranslateEnabled && (
-                        <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-200 rounded-lg p-4 mb-4">
-                          <div className="flex items-center space-x-2 text-emerald-800">
+                        <div className="bg-gradient-to-r from-gray-50 to-blue-50 border-2 border-gray-300 rounded-lg p-4 mb-4">
+                          <div className="flex items-center space-x-2 text-gray-800">
                             <Sparkles className="w-5 h-5" />
                             <p className="text-sm font-semibold">
                               Traduzido automaticamente do português. Pode editar se necessário.
@@ -847,8 +847,8 @@ export const AdminPage = () => {
                   {activeTab === 'content-en' && (
                     <div>
                       {autoTranslateEnabled && (
-                        <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-200 rounded-lg p-4 mb-4">
-                          <div className="flex items-center space-x-2 text-emerald-800">
+                        <div className="bg-gradient-to-r from-gray-50 to-blue-50 border-2 border-gray-300 rounded-lg p-4 mb-4">
+                          <div className="flex items-center space-x-2 text-gray-800">
                             <Sparkles className="w-5 h-5" />
                             <p className="text-sm font-semibold">
                               Traduzido automaticamente do português. Pode editar se necessário.
@@ -883,7 +883,7 @@ export const AdminPage = () => {
                     type="button"
                     onClick={(e) => handleSubmit(e, false)}
                     disabled={loading || translating.title || translating.excerpt || translating.blocks}
-                    className="flex items-center space-x-2 px-6 py-3 border-2 border-emerald-600 text-emerald-700 rounded-lg hover:bg-emerald-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
+                    className="flex items-center space-x-2 px-6 py-3 border-2 border-gray-700 text-gray-900 rounded-lg hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
                   >
                     <Save className="w-5 h-5" />
                     <span>
@@ -939,7 +939,7 @@ export const AdminPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {articles.map(article => (
-                <div key={article.id} className="bg-white rounded-xl shadow-md border-2 border-gray-200 overflow-hidden hover:shadow-2xl hover:border-emerald-300 transition-all">
+                <div key={article.id} className="bg-white rounded-xl shadow-md border-2 border-gray-200 overflow-hidden hover:shadow-2xl hover:border-gray-400 transition-all">
                   <img
                     src={article.image_url}
                     alt={article.title_pt}
@@ -947,7 +947,7 @@ export const AdminPage = () => {
                   />
                   <div className="p-6">
                     <div className="flex items-center space-x-2 text-sm text-gray-600 mb-3">
-                      <span className="px-3 py-1 bg-gradient-to-r from-emerald-100 to-emerald-200 text-emerald-800 rounded-full text-xs font-bold">
+                      <span className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 rounded-full text-xs font-bold">
                         {article.category}
                       </span>
                       {!article.is_published && (

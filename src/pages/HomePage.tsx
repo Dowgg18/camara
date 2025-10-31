@@ -107,10 +107,10 @@ export const HomePage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 text-white">
-                  <span className="inline-block px-2 sm:px-3 py-1 bg-emerald-600 text-xs font-semibold uppercase tracking-wide mb-2 sm:mb-3 rounded">
+                  <span className="inline-block px-2 sm:px-3 py-1 bg-gray-700 text-xs font-semibold uppercase tracking-wide mb-2 sm:mb-3 rounded">
                     Destaque
                   </span>
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 leading-tight group-hover:text-emerald-400 transition-colors">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 leading-tight group-hover:text-gray-400 transition-colors">
                     {getTitle(featuredArticle)}
                   </h2>
                   <p className="text-sm sm:text-base text-gray-200 mb-3 sm:mb-4 line-clamp-2">{getExcerpt(featuredArticle)}</p>
@@ -136,10 +136,10 @@ export const HomePage = () => {
                     />
                   </div>
                   <div className="p-3 sm:p-4 flex-1">
-                    <span className="inline-block px-2 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wide mb-1 sm:mb-2 rounded">
+                    <span className="inline-block px-2 py-1 bg-gray-200 text-gray-800 text-xs font-semibold uppercase tracking-wide mb-1 sm:mb-2 rounded">
                       {article.category}
                     </span>
-                    <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 leading-tight group-hover:text-emerald-700 transition-colors line-clamp-2">
+                    <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 leading-tight group-hover:text-gray-900 transition-colors line-clamp-2">
                       {getTitle(article)}
                     </h3>
                     <div className="flex items-center text-xs text-gray-500">
@@ -157,7 +157,7 @@ export const HomePage = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center justify-between mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{t('home.latest.title')}</h2>
-              <Link to="/news" className="text-emerald-700 hover:text-emerald-800 font-medium text-sm">
+              <Link to="/news" className="text-gray-900 hover:text-gray-800 font-medium text-sm">
                 {t('viewAll')} →
               </Link>
             </div>
@@ -172,13 +172,13 @@ export const HomePage = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
-                      <span className="px-2 py-0.5 sm:py-1 bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wide rounded">
+                      <span className="px-2 py-0.5 sm:py-1 bg-gray-900 text-white text-xs font-semibold uppercase tracking-wide rounded">
                         {article.category}
                       </span>
                     </div>
                   </div>
                   <div className="p-3 sm:p-4">
-                    <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 leading-tight group-hover:text-emerald-700 transition-colors line-clamp-2">
+                    <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 leading-tight group-hover:text-gray-900 transition-colors line-clamp-2">
                       {getTitle(article)}
                     </h3>
                     <p className="text-gray-600 text-sm mb-2 sm:mb-3 line-clamp-2">{getExcerpt(article)}</p>
@@ -195,7 +195,7 @@ export const HomePage = () => {
           <div>
             <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm mb-4 sm:mb-6 lg:sticky lg:top-24">
               <div className="flex items-center space-x-2 mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200">
-                <TrendingUp className="w-5 h-5 text-emerald-700" />
+                <TrendingUp className="w-5 h-5 text-gray-900" />
                 <h3 className="text-base sm:text-lg font-bold text-gray-900">Mais Lidas</h3>
               </div>
 
@@ -203,14 +203,14 @@ export const HomePage = () => {
                 {trendingArticles.map((article, index) => (
                   <Link key={article.id} to={`/news/${article.id}`} className="group cursor-pointer block">
                     <div className="flex items-start space-x-2 sm:space-x-3 pb-3 sm:pb-4 border-b border-gray-100 last:border-0">
-                      <span className="text-xl sm:text-2xl font-bold text-gray-200 group-hover:text-emerald-700 transition-colors">
+                      <span className="text-xl sm:text-2xl font-bold text-gray-200 group-hover:text-gray-900 transition-colors">
                         {index + 1}
                       </span>
                       <div className="flex-1">
-                        <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 mb-1 block">
+                        <span className="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-1 block">
                           {article.category}
                         </span>
-                        <h4 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-emerald-700 transition-colors mb-1 line-clamp-2">
+                        <h4 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-gray-900 transition-colors mb-1 line-clamp-2">
                           {getTitle(article)}
                         </h4>
                         <div className="flex items-center text-xs text-gray-500">
@@ -226,12 +226,12 @@ export const HomePage = () => {
 
             <div className="bg-gradient-to-br from-emerald-700 to-emerald-600 rounded-lg p-4 sm:p-6 text-white text-center">
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Faça parte da nossa comunidade</h3>
-              <p className="text-emerald-100 text-sm mb-3 sm:mb-4">
+              <p className="text-gray-100 text-sm mb-3 sm:mb-4">
                 Associe-se e tenha acesso a benefícios exclusivos
               </p>
               <Link
                 to="/membership"
-                className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-emerald-900 rounded-lg hover:bg-emerald-50 transition-colors font-semibold text-sm"
+                className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-sm"
               >
                 Associe-se Agora
               </Link>

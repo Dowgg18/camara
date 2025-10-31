@@ -50,7 +50,7 @@ export const AdminLayout = ({ children }: AdminLayoutProps) => {
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
-              <h1 className="text-xl font-bold text-emerald-700">Admin Panel</h1>
+              <h1 className="text-xl font-bold text-gray-900">Admin Panel</h1>
               <button
                 onClick={() => setSidebarOpen(false)}
                 className="lg:hidden p-2 hover:bg-gray-100 rounded-lg"
@@ -73,7 +73,7 @@ export const AdminLayout = ({ children }: AdminLayoutProps) => {
                   onClick={() => setSidebarOpen(false)}
                   className={`flex items-center px-4 py-3 rounded-lg transition-colors ${
                     isActive
-                      ? 'bg-emerald-50 text-emerald-700 font-medium'
+                      ? 'bg-gray-100 text-gray-900 font-medium'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >

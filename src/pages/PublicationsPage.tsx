@@ -36,8 +36,8 @@ export const PublicationsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {publications.map((pub, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-emerald-700" />
+              <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                <FileText className="w-6 h-6 text-gray-900" />
               </div>
               <div className="mb-3">
                 <span className="inline-block px-3 py-1 bg-gray-100 text-xs font-semibold uppercase text-gray-700 rounded-full">
@@ -47,7 +47,7 @@ export const PublicationsPage = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{pub.title}</h3>
               <p className="text-gray-600 text-sm mb-4">{pub.description}</p>
-              <button className="flex items-center space-x-2 text-emerald-700 hover:text-emerald-800 font-semibold">
+              <button className="flex items-center space-x-2 text-gray-900 hover:text-gray-800 font-semibold">
                 <Download className="w-4 h-4" />
                 <span>Download PDF</span>
               </button>

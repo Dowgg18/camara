@@ -88,11 +88,11 @@ export const ProjectsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all">
-              <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-emerald-100 to-blue-100 rounded-xl mb-4">
-                <project.icon className="w-7 h-7 text-emerald-700" />
+              <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-gray-100 to-blue-100 rounded-xl mb-4">
+                <project.icon className="w-7 h-7 text-gray-900" />
               </div>
               <div className="mb-3">
-                <span className="inline-block px-3 py-1 bg-emerald-100 text-xs font-semibold text-emerald-800 rounded-full">
+                <span className="inline-block px-3 py-1 bg-gray-200 text-xs font-semibold text-gray-800 rounded-full">
                   {project.status}
                 </span>
               </div>

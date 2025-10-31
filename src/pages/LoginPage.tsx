@@ -36,7 +36,7 @@ export const LoginPage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto"></div>
           <p className="mt-4 text-gray-600">Verificando autenticação...</p>
         </div>
       </div>
@@ -44,12 +44,12 @@ export const LoginPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-emerald-50 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-emerald-50 flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-              <LogIn className="w-8 h-8 text-emerald-700" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full mb-4">
+              <LogIn className="w-8 h-8 text-gray-900" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Login Administrativo</h1>
             <p className="text-gray-600">Acesse o painel de gerenciamento</p>
@@ -75,7 +75,7 @@ export const LoginPage = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                  className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all"
                   placeholder="seu@email.com"
                 />
               </div>
@@ -93,7 +93,7 @@ export const LoginPage = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                  className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all"
                   placeholder="••••••••"
                 />
               </div>
@@ -102,7 +102,7 @@ export const LoginPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-emerald-700 text-white py-3 rounded-lg font-semibold hover:bg-emerald-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? (
                 <>

@@ -91,10 +91,10 @@ export const LinksPage = () => {
         <div className="space-y-8">
           {links.map((section, index) => (
             <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-              <div className="bg-gradient-to-r from-emerald-50 to-blue-50 px-6 py-4 border-b border-gray-200">
+              <div className="bg-gradient-to-r from-gray-50 to-blue-50 px-6 py-4 border-b border-gray-200">
                 <div className="flex items-center">
                   <div className="flex items-center justify-center w-10 h-10 bg-white rounded-lg mr-4">
-                    <section.icon className="w-5 h-5 text-emerald-700" />
+                    <section.icon className="w-5 h-5 text-gray-900" />
                   </div>
                   <h2 className="text-xl font-bold text-gray-900">
                     {language === 'pt' ? section.category_pt :
@@ -114,7 +114,7 @@ export const LinksPage = () => {
                       className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group"
                     >
                       <span className="text-gray-700 font-medium">{link.name}</span>
-                      <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-emerald-700 transition-colors" />
+                      <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-gray-900 transition-colors" />
                     </a>
                   ))}
                 </div>
@@ -136,7 +136,7 @@ export const LinksPage = () => {
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-4 bg-white text-emerald-700 rounded-lg hover:bg-emerald-50 transition-colors font-semibold"
+            className="inline-block px-8 py-4 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
           >
             {language === 'pt' ? 'Entre em Contato' :
              language === 'ru' ? 'Связаться' :

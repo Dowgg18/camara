@@ -69,7 +69,7 @@ export const NewsPage = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 selectedCategory === cat
-                  ? 'bg-emerald-700 text-white'
+                  ? 'bg-gray-900 text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -93,10 +93,10 @@ export const NewsPage = () => {
                 />
               </div>
               <div className="p-5">
-                <span className="inline-block px-2 py-1 bg-emerald-100 text-xs font-semibold uppercase tracking-wide text-emerald-800 mb-2 rounded">
+                <span className="inline-block px-2 py-1 bg-gray-200 text-xs font-semibold uppercase tracking-wide text-gray-800 mb-2 rounded">
                   {article.category}
                 </span>
-                <h3 className="text-xl font-bold mb-2 leading-tight group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-xl font-bold mb-2 leading-tight group-hover:text-gray-900 transition-colors">
                   {getTitle(article)}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2">{getExcerpt(article)}</p>

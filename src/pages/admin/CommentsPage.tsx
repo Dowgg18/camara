@@ -77,7 +77,7 @@ export const CommentsPage = () => {
   const getStatusBadge = (status: string) => {
     const styles = {
       pending: 'bg-yellow-100 text-yellow-800',
-      approved: 'bg-green-100 text-green-800',
+      approved: 'bg-gray-200 text-green-800',
       rejected: 'bg-red-100 text-red-800'
     };
 
@@ -109,7 +109,7 @@ export const CommentsPage = () => {
               onClick={() => setFilter(f as typeof filter)}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 filter === f
-                  ? 'bg-emerald-700 text-white'
+                  ? 'bg-gray-900 text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
               }`}
             >
@@ -165,7 +165,7 @@ export const CommentsPage = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => setSelectedComment(comment)}
-                        className="text-emerald-600 hover:text-emerald-900"
+                        className="text-gray-700 hover:text-gray-900"
                       >
                         <Eye className="w-5 h-5" />
                       </button>

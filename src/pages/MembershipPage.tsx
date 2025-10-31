@@ -227,8 +227,8 @@ export const MembershipPage = () => {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center py-16 px-4">
         <div className="max-w-md w-full">
           <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-12 h-12 text-green-600" />
+            <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle2 className="w-12 h-12 text-gray-700" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.success}</h2>
             <p className="text-gray-600 mb-8">{t.success_message}</p>

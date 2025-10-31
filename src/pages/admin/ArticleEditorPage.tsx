@@ -412,7 +412,7 @@ export default function ArticleEditorPage() {
                   onClick={() => setActiveTab('pt')}
                   className={`flex-1 px-6 py-4 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center space-x-2 ${
                     activeTab === 'pt'
-                      ? 'bg-white text-emerald-600 border-b-4 border-emerald-600 -mb-0.5'
+                      ? 'bg-white text-gray-700 border-b-4 border-gray-700 -mb-0.5'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`}
                 >
@@ -468,7 +468,7 @@ export default function ArticleEditorPage() {
                         type="text"
                         value={form.title_pt}
                         onChange={(e) => setForm({ ...form, title_pt: e.target.value })}
-                        className="w-full px-4 py-4 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 transition-all text-xl font-bold"
+                        className="w-full px-4 py-4 border-2 border-gray-300 rounded-lg focus:border-gray-600 focus:ring-4 focus:ring-emerald-100 transition-all text-xl font-bold"
                         placeholder="Digite o título do artigo..."
                       />
                     </div>
@@ -481,7 +481,7 @@ export default function ArticleEditorPage() {
                         value={form.excerpt_pt}
                         onChange={(e) => setForm({ ...form, excerpt_pt: e.target.value })}
                         rows={4}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 transition-all resize-none"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-600 focus:ring-4 focus:ring-emerald-100 transition-all resize-none"
                         placeholder="Escreva um resumo envolvente do artigo..."
                       />
                     </div>
@@ -618,7 +618,7 @@ export default function ArticleEditorPage() {
                   <select
                     value={form.category}
                     onChange={(e) => setForm({ ...form, category: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all font-medium"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-600 focus:ring-2 focus:ring-emerald-200 transition-all font-medium"
                   >
                     {categories.map(cat => (
                       <option key={cat} value={cat}>{cat}</option>
@@ -634,7 +634,7 @@ export default function ArticleEditorPage() {
                     type="text"
                     value={form.author}
                     onChange={(e) => setForm({ ...form, author: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                     placeholder="Nome do autor"
                   />
                 </div>
@@ -647,7 +647,7 @@ export default function ArticleEditorPage() {
                     type="text"
                     value={form.read_time}
                     onChange={(e) => setForm({ ...form, read_time: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                     placeholder="Ex: 5 min"
                   />
                 </div>
@@ -698,7 +698,7 @@ export default function ArticleEditorPage() {
                     <button
                       onClick={() => setActiveTab('pt')}
                       className={`px-3 py-1 rounded-lg text-sm font-bold ${
-                        activeTab === 'pt' ? 'bg-emerald-600 text-white' : 'bg-gray-200 text-gray-600'
+                        activeTab === 'pt' ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-600'
                       }`}
                     >
                       PT
@@ -739,7 +739,7 @@ export default function ArticleEditorPage() {
                 )}
 
                 <div className="mb-4 flex items-center space-x-4 text-sm text-gray-600">
-                  <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full font-semibold">
+                  <span className="px-3 py-1 bg-gray-200 text-gray-900 rounded-full font-semibold">
                     {form.category}
                   </span>
                   <span>{form.read_time}</span>

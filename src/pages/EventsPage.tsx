@@ -70,7 +70,7 @@ export const EventsPage = () => {
                 </div>
                 <div className="p-8 md:w-2/3">
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
                       {event.is_paid ? `R$ ${event.price}` : 'Gratuito'}
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export const EventsPage = () => {
                   <p className="text-gray-600 mb-6">{getDescription(event)}</p>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center space-x-3 text-gray-700">
-                      <Calendar className="w-5 h-5 text-emerald-700" />
+                      <Calendar className="w-5 h-5 text-gray-900" />
                       <span>
                         {new Date(event.event_date).toLocaleDateString(language, {
                           day: 'numeric',
@@ -88,7 +88,7 @@ export const EventsPage = () => {
                       </span>
                     </div>
                     <div className="flex items-center space-x-3 text-gray-700">
-                      <Clock className="w-5 h-5 text-emerald-700" />
+                      <Clock className="w-5 h-5 text-gray-900" />
                       <span>
                         {new Date(event.event_date).toLocaleTimeString(language, {
                           hour: '2-digit',
@@ -97,11 +97,11 @@ export const EventsPage = () => {
                       </span>
                     </div>
                     <div className="flex items-center space-x-3 text-gray-700">
-                      <MapPin className="w-5 h-5 text-emerald-700" />
+                      <MapPin className="w-5 h-5 text-gray-900" />
                       <span>{event.location}</span>
                     </div>
                   </div>
-                  <button className="px-6 py-3 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors font-semibold">
+                  <button className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold">
                     Inscrever-se
                   </button>
                 </div>

@@ -92,7 +92,7 @@ export const ImageUpload = ({ onImageSelect, currentImageUrl, currentImage, onRe
         <div
           className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
             dragActive
-              ? 'border-emerald-500 bg-emerald-50'
+              ? 'border-gray-600 bg-gray-100'
               : 'border-gray-300 hover:border-gray-400'
           }`}
           onDragEnter={handleDrag}
@@ -114,14 +114,14 @@ export const ImageUpload = ({ onImageSelect, currentImageUrl, currentImage, onRe
           >
             {uploading ? (
               <>
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mb-3"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-700 mb-3"></div>
                 <p className="text-sm text-gray-600 mb-1">Fazendo upload...</p>
               </>
             ) : (
               <>
                 <Upload className="w-12 h-12 text-gray-400 mb-3" />
                 <p className="text-sm text-gray-600 mb-1">
-                  <span className="font-semibold text-emerald-600">Clique para fazer upload</span> ou
+                  <span className="font-semibold text-gray-700">Clique para fazer upload</span> ou
                   arraste e solte
                 </p>
                 <p className="text-xs text-gray-500">PNG, JPG, GIF até 10MB</p>

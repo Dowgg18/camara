@@ -124,7 +124,7 @@ export const NewsPostPage = () => {
 
     if (block.type === 'quote') {
       return (
-        <blockquote key={block.id} className="border-l-4 border-emerald-600 pl-6 py-2 my-6 italic text-gray-700 text-lg">
+        <blockquote key={block.id} className="border-l-4 border-gray-600 pl-6 py-2 my-6 italic text-gray-700 text-lg">
           {block.content}
         </blockquote>
       );
@@ -163,7 +163,7 @@ export const NewsPostPage = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto"></div>
           <p className="mt-4 text-gray-600">Carregando...</p>
         </div>
       </div>
@@ -178,7 +178,7 @@ export const NewsPostPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <Link
             to="/news"
-            className="inline-flex items-center text-emerald-700 hover:text-emerald-800 font-medium transition-colors group"
+            className="inline-flex items-center text-gray-900 hover:text-gray-800 font-medium transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Voltar para Notícias
@@ -192,7 +192,7 @@ export const NewsPostPage = () => {
           <article className="lg:col-span-2">
             <header className="mb-8">
               <div className="flex items-center gap-2 mb-4">
-                <span className="inline-flex items-center px-3 py-1 bg-emerald-100 text-sm font-semibold uppercase tracking-wide text-emerald-800 rounded-full">
+                <span className="inline-flex items-center px-3 py-1 bg-gray-200 text-sm font-semibold uppercase tracking-wide text-gray-800 rounded-full">
                   <Tag className="w-3 h-3 mr-1" />
                   {article.category}
                 </span>
@@ -251,7 +251,7 @@ export const NewsPostPage = () => {
                       to="/partners"
                       className="block group"
                     >
-                      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:border-emerald-500 hover:shadow-md transition-all duration-200">
+                      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:border-gray-600 hover:shadow-md transition-all duration-200">
                         <img
                           src={partner.logo}
                           alt={partner.name}
@@ -287,10 +287,10 @@ export const NewsPostPage = () => {
                     />
                   </div>
                   <div className="p-5">
-                    <span className="inline-block px-2 py-1 bg-emerald-100 text-xs font-semibold uppercase tracking-wide text-emerald-800 mb-2 rounded">
+                    <span className="inline-block px-2 py-1 bg-gray-200 text-xs font-semibold uppercase tracking-wide text-gray-800 mb-2 rounded">
                       {relatedArticle.category}
                     </span>
-                    <h3 className="text-lg font-bold mb-2 leading-tight group-hover:text-emerald-700 transition-colors line-clamp-2">
+                    <h3 className="text-lg font-bold mb-2 leading-tight group-hover:text-gray-900 transition-colors line-clamp-2">
                       {getTitle(relatedArticle)}
                     </h3>
                     <p className="text-gray-600 text-sm line-clamp-2">{getExcerpt(relatedArticle)}</p>

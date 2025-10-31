@@ -233,7 +233,7 @@ export const AboutPage = () => {
                     language === 'ru' ? service.items_ru :
                     service.items_en).map((item, idx) => (
                     <li key={idx} className="flex items-start text-gray-600 text-sm">
-                      <CheckCircle2 className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-gray-700 mr-2 flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}

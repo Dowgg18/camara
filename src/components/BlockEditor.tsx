@@ -91,7 +91,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
             value={block.content}
             onChange={(e) => updateBlock(block.id, { content: e.target.value })}
             placeholder="Digite o parágrafo..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-transparent resize-none"
             rows={4}
           />
         );
@@ -104,7 +104,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
               onChange={(e) => updateBlock(block.id, {
                 metadata: { ...block.metadata, level: parseInt(e.target.value) }
               })}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+              className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600"
             >
               <option value={1}>Título H1</option>
               <option value={2}>Título H2</option>
@@ -115,7 +115,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
               value={block.content}
               onChange={(e) => updateBlock(block.id, { content: e.target.value })}
               placeholder="Digite o título..."
-              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 font-bold ${
+              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600 font-bold ${
                 block.metadata?.level === 1 ? 'text-3xl' : block.metadata?.level === 2 ? 'text-2xl' : 'text-xl'
               }`}
             />
@@ -154,7 +154,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
                 metadata: { ...block.metadata, alt: e.target.value }
               })}
               placeholder="Texto alternativo (ALT)"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600"
             />
             <input
               type="text"
@@ -163,7 +163,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
                 metadata: { ...block.metadata, caption: e.target.value }
               })}
               placeholder="Legenda da imagem (opcional)"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600"
             />
           </div>
         );
@@ -176,7 +176,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
               value={block.content}
               onChange={(e) => updateBlock(block.id, { content: e.target.value })}
               placeholder="Digite a citação..."
-              className="w-full pl-14 pr-4 py-4 border-l-4 border-emerald-600 bg-gray-50 rounded-lg focus:ring-2 focus:ring-emerald-500 italic resize-none"
+              className="w-full pl-14 pr-4 py-4 border-l-4 border-gray-600 bg-gray-50 rounded-lg focus:ring-2 focus:ring-gray-600 italic resize-none"
               rows={3}
             />
           </div>
@@ -202,7 +202,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
                     });
                   }}
                   placeholder={`Item ${idx + 1}`}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-600"
                 />
                 {idx > 0 && (
                   <button
@@ -226,7 +226,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
                   metadata: { ...block.metadata, items: newItems }
                 });
               }}
-              className="text-sm text-emerald-700 hover:text-emerald-800 font-medium"
+              className="text-sm text-gray-900 hover:text-gray-800 font-medium"
             >
               + Adicionar item
             </button>
@@ -258,7 +258,7 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
           </div>
         ) : (
           blocks.map((block, index) => (
-            <div key={block.id} className="group relative bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-emerald-500 transition-all">
+            <div key={block.id} className="group relative bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-gray-600 transition-all">
               <div className="flex items-center justify-between p-3 border-b border-gray-200 bg-white rounded-t-lg">
                 <div className="flex items-center space-x-3">
                   <GripVertical className="w-5 h-5 text-gray-400 cursor-move" />
@@ -300,47 +300,47 @@ export const BlockEditor = ({ blocks, onChange, onImageUpload, onImageSelect }: 
         )}
       </div>
 
-      <div className="bg-gradient-to-r from-emerald-50 to-white rounded-lg border border-emerald-200 p-4">
+      <div className="bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-300 p-4">
         <p className="text-sm font-medium text-gray-700 mb-3">Adicionar novo bloco:</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
           <button
             onClick={() => addBlock('paragraph')}
-            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-all"
+            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-gray-600 hover:bg-gray-100 transition-all"
           >
             <AlignLeft className="w-5 h-5 text-gray-600 mb-1" />
             <span className="text-xs font-medium text-gray-700">Parágrafo</span>
           </button>
           <button
             onClick={() => addBlock('heading')}
-            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-all"
+            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-gray-600 hover:bg-gray-100 transition-all"
           >
             <Type className="w-5 h-5 text-gray-600 mb-1" />
             <span className="text-xs font-medium text-gray-700">Título</span>
           </button>
           <button
             onClick={() => addBlock('image')}
-            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-all"
+            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-gray-600 hover:bg-gray-100 transition-all"
           >
             <ImageIcon className="w-5 h-5 text-gray-600 mb-1" />
             <span className="text-xs font-medium text-gray-700">Imagem</span>
           </button>
           <button
             onClick={() => addBlock('quote')}
-            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-all"
+            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-gray-600 hover:bg-gray-100 transition-all"
           >
             <Quote className="w-5 h-5 text-gray-600 mb-1" />
             <span className="text-xs font-medium text-gray-700">Citação</span>
           </button>
           <button
             onClick={() => addBlock('list')}
-            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-all"
+            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-gray-600 hover:bg-gray-100 transition-all"
           >
             <List className="w-5 h-5 text-gray-600 mb-1" />
             <span className="text-xs font-medium text-gray-700">Lista</span>
           </button>
           <button
             onClick={() => addBlock('ordered-list')}
-            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-all"
+            className="flex flex-col items-center justify-center p-3 bg-white border border-gray-300 rounded-lg hover:border-gray-600 hover:bg-gray-100 transition-all"
           >
             <ListOrdered className="w-5 h-5 text-gray-600 mb-1" />
             <span className="text-xs font-medium text-gray-700">Numerada</span>

@@ -68,7 +68,7 @@ export const ServicesPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div>
             <h1 className="text-5xl font-bold text-white mb-4">{t('nav.services')}</h1>
-            <p className="text-xl text-emerald-100">
+            <p className="text-xl text-gray-100">
               {language === 'pt' ? 'Soluções completas para o sucesso dos seus negócios' :
                language === 'ru' ? 'Комплексные решения для успеха вашего бизнеса' :
                'Complete solutions for your business success'}
@@ -83,8 +83,8 @@ export const ServicesPage = () => {
             const Icon = service.icon;
             return (
               <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-emerald-700" />
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                  <Icon className="w-8 h-8 text-gray-900" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {language === 'pt' ? service.title_pt :
@@ -101,7 +101,7 @@ export const ServicesPage = () => {
                     language === 'ru' ? service.features_ru :
                     service.features_en).map((feature, idx) => (
                     <li key={idx} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-emerald-700 rounded-full"></div>
+                      <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -117,14 +117,14 @@ export const ServicesPage = () => {
              language === 'ru' ? 'Готовы расширить свой бизнес?' :
              'Ready to expand your business?'}
           </h2>
-          <p className="text-xl text-emerald-100 mb-8">
+          <p className="text-xl text-gray-100 mb-8">
             {language === 'pt' ? 'Entre em contato conosco e descubra como podemos ajudar sua empresa' :
              language === 'ru' ? 'Свяжитесь с нами и узнайте, как мы можем помочь вашей компании' :
              'Contact us and discover how we can help your company'}
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-4 bg-white text-emerald-900 rounded-lg hover:bg-emerald-50 transition-all font-semibold shadow-lg"
+            className="inline-block px-8 py-4 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all font-semibold shadow-lg"
           >
             {language === 'pt' ? 'Fale Conosco' :
              language === 'ru' ? 'Свяжитесь с нами' :

@@ -49,7 +49,7 @@ export const ContactPage = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8">
               {submitted && (
-                <div className="mb-6 p-4 bg-emerald-100 text-emerald-800 rounded-lg">
+                <div className="mb-6 p-4 bg-gray-200 text-gray-800 rounded-lg">
                   {language === 'pt' ? 'Mensagem enviada com sucesso! Entraremos em contato em breve.' :
                    language === 'ru' ? 'Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.' :
                    'Message sent successfully! We will contact you soon.'}
@@ -143,7 +143,7 @@ export const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors font-semibold"
+                  className="w-full py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold"
                 >
                   {t('contact.submit')}
                 </button>
@@ -160,7 +160,7 @@ export const ContactPage = () => {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-emerald-700 mt-1 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-gray-900 mt-1 flex-shrink-0" />
                   <div>
                     <div className="font-medium text-gray-900">
                       {language === 'pt' ? 'Endereço' :
@@ -171,7 +171,7 @@ export const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Phone className="w-5 h-5 text-emerald-700 mt-1 flex-shrink-0" />
+                  <Phone className="w-5 h-5 text-gray-900 mt-1 flex-shrink-0" />
                   <div>
                     <div className="font-medium text-gray-900">
                       {language === 'pt' ? 'Telefone' :
@@ -182,7 +182,7 @@ export const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Mail className="w-5 h-5 text-emerald-700 mt-1 flex-shrink-0" />
+                  <Mail className="w-5 h-5 text-gray-900 mt-1 flex-shrink-0" />
                   <div>
                     <div className="font-medium text-gray-900">E-mail</div>
                     <div className="text-gray-600 text-sm">contato@ccbr.org.br</div>

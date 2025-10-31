@@ -54,7 +54,7 @@ export const ContactMessagesPage = () => {
     const styles = {
       new: 'bg-blue-100 text-blue-800',
       in_progress: 'bg-yellow-100 text-yellow-800',
-      resolved: 'bg-green-100 text-green-800'
+      resolved: 'bg-gray-200 text-green-800'
     };
 
     const labels = {
@@ -85,7 +85,7 @@ export const ContactMessagesPage = () => {
               onClick={() => setFilter(f as typeof filter)}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 filter === f
-                  ? 'bg-emerald-700 text-white'
+                  ? 'bg-gray-900 text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
               }`}
             >
@@ -140,7 +140,7 @@ export const ContactMessagesPage = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <button
                         onClick={() => setSelectedMessage(msg)}
-                        className="text-emerald-600 hover:text-emerald-900"
+                        className="text-gray-700 hover:text-gray-900"
                       >
                         <Eye className="w-5 h-5" />
                       </button>
@@ -231,7 +231,7 @@ export const ContactMessagesPage = () => {
                   </button>
                   <button
                     onClick={() => updateStatus(selectedMessage.id, 'resolved')}
-                    className="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors"
+                    className="px-4 py-2 bg-gray-200 text-green-700 rounded-lg hover:bg-green-200 transition-colors"
                   >
                     Resolvida
                   </button>

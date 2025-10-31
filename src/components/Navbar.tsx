@@ -96,30 +96,30 @@ export const Navbar = () => {
   return (
     <>
       {tickerArticles.length > 0 && (
-        <div className="bg-emerald-700 text-white overflow-hidden">
+        <div className="bg-gray-900 text-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-10 text-xs sm:text-sm">
               <Link
                 to={`/news/${tickerArticles[currentTickerIndex].id}`}
-                className="flex items-center space-x-2 sm:space-x-3 overflow-hidden hover:text-emerald-100 transition-colors flex-1"
+                className="flex items-center space-x-2 sm:space-x-3 overflow-hidden hover:text-gray-100 transition-colors flex-1"
               >
                 <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                 <span className="font-semibold uppercase tracking-wide hidden sm:inline">Destaque</span>
                 <span className="truncate">{getTickerTitle(tickerArticles[currentTickerIndex])}</span>
-                <span className="text-emerald-200 text-xs hidden md:inline">— {getTimeAgo(tickerArticles[currentTickerIndex].published_at)}</span>
+                <span className="text-gray-300 text-xs hidden md:inline">— {getTimeAgo(tickerArticles[currentTickerIndex].published_at)}</span>
               </Link>
               {tickerArticles.length > 1 && (
                 <div className="hidden sm:flex items-center space-x-2">
                   <button
                     onClick={handlePrevTicker}
-                    className="p-1 hover:bg-emerald-600 rounded transition-colors"
+                    className="p-1 hover:bg-gray-700 rounded transition-colors"
                     aria-label="Notícia anterior"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                   <button
                     onClick={handleNextTicker}
-                    className="p-1 hover:bg-emerald-600 rounded transition-colors"
+                    className="p-1 hover:bg-gray-700 rounded transition-colors"
                     aria-label="Próxima notícia"
                   >
                     <ChevronRight className="w-4 h-4" />
@@ -150,7 +150,7 @@ export const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/about"
-                  className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors"
+                  className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
                   <span>{t('nav.chamber')}</span>
                   <ChevronDown className="w-4 h-4" />
@@ -169,7 +169,7 @@ export const Navbar = () => {
               </div>
 
               <div className="relative group">
-                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors">
+                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
                   <span>{t('nav.services')}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -183,12 +183,12 @@ export const Navbar = () => {
                 </div>
               </div>
 
-              <Link to="/partners" className="text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors">
+              <Link to="/partners" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
                 {t('nav.partners')}
               </Link>
 
               <div className="relative group">
-                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors">
+                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
                   <span>{t('nav.members')}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -203,7 +203,7 @@ export const Navbar = () => {
               </div>
 
               <div className="relative group">
-                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors">
+                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
                   <span>{t('nav.brazilrussia')}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -227,7 +227,7 @@ export const Navbar = () => {
               </div>
 
               <div className="relative group">
-                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors">
+                <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
                   <span>{t('nav.media')}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -253,7 +253,7 @@ export const Navbar = () => {
                 </div>
               </div>
 
-              <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors">
+              <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
                 {t('nav.contact')}
               </Link>
             </div>
@@ -290,7 +290,7 @@ export const Navbar = () => {
                 <div className="flex items-center space-x-3">
                   <Link
                     to="/admin"
-                    className="flex items-center space-x-2 px-4 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors"
+                    className="flex items-center space-x-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
                   >
                     <User className="w-4 h-4" />
                     <span className="text-sm font-medium">Área ADM</span>
@@ -306,7 +306,7 @@ export const Navbar = () => {
               ) : (
                 <Link
                   to="/membership"
-                  className="px-6 py-2.5 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors text-sm font-medium"
+                  className="px-6 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium"
                 >
                   {t('nav.membership')}
                 </Link>
@@ -483,7 +483,7 @@ export const Navbar = () => {
 
               {user ? (
                 <div className="pt-2 mt-2 border-t border-gray-200 space-y-1">
-                  <Link to="/admin" className="block px-3 py-2 text-base font-medium text-emerald-700 hover:bg-gray-100 rounded-lg" onClick={closeAllMenus}>
+                  <Link to="/admin" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 rounded-lg" onClick={closeAllMenus}>
                     Área ADM
                   </Link>
                   <button
@@ -497,7 +497,7 @@ export const Navbar = () => {
                   </button>
                 </div>
               ) : (
-                <Link to="/membership" className="block px-3 py-2 text-base font-medium text-emerald-700 hover:bg-gray-100 rounded-lg" onClick={closeAllMenus}>
+                <Link to="/membership" className="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 rounded-lg" onClick={closeAllMenus}>
                   {t('nav.membership')}
                 </Link>
               )}

@@ -67,7 +67,7 @@ export const AboutBrazilPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-              <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg mb-4">
+              <div className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-lg mb-4">
                 <stat.icon className="w-6 h-6 text-green-700" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
@@ -82,7 +82,7 @@ export const AboutBrazilPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-            <Globe2 className="w-12 h-12 text-green-600 mb-6" />
+            <Globe2 className="w-12 h-12 text-gray-700 mb-6" />
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {language === 'pt' ? 'Geografia e Clima' :
                language === 'ru' ? 'География и климат' :
